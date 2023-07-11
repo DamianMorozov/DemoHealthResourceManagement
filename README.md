@@ -1,2 +1,1 @@
-# DemoHealthResourceManagement
-Health resource management
+# DemoHealthResourceManagement - Demo solution for Health resource management
