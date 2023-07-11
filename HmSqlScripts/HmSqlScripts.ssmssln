@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 19.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{B8575BA1-D0FD-4926-B7F3-9115A0386D85}"
+	ProjectSection(SolutionItems) = preProject
+		DB\DB_BACKUP.sql = DB\DB_BACKUP.sql
+		DB\DB_CREATE.sql = DB\DB_CREATE.sql
+		DB\DB_DROP.sql = DB\DB_DROP.sql
+		DB\DB_RESTORE.sql = DB\DB_RESTORE.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EAB973C-6184-4DF6-B7B8-A0A092C41656}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {412DBDA3-5185-4499-92C2-1D9044DD089F}
+	EndGlobalSection
+EndGlobal

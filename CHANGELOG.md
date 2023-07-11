@@ -6,8 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-## [0.1.010] - 2023-07-11
+## [0.1.020] - 2023-07-11
 ### Added
 - CHANGELOG.md
 - LICENSE.md
 - README.md
+- HmSqlScripts
+- HmSqlScripts\DB\DB_BACKUP.sql
+- HmSqlScripts\DB\DB_CREATE.sql
+- HmSqlScripts\DB\DB_DROP.sql
+- HmSqlScripts\DB\DB_RESTORE.sql
