@@ -1,5 +1,5 @@
 ﻿------------------------------------------------------------------------------------------------------------------------
--- PATIENTS_SELECT
+-- RECEPTIONS_SELECT
 ------------------------------------------------------------------------------------------------------------------------
 SET NOCOUNT ON;
 SET ANSI_NULLS ON;
@@ -9,7 +9,7 @@ PRINT N'[ ] SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED';
 DECLARE @DB_NAME_CUR VARCHAR(128) = NULL;
 DECLARE @DB_NAME_DEV VARCHAR(128) = 'HRM_DEMO_DEV';
 DECLARE @DB_NAME_PROD VARCHAR(128) = 'HRM_DEMO_PROD';
-DECLARE @SCHEMA_NAME VARCHAR(128) = 'REF';
+DECLARE @SCHEMA_NAME VARCHAR(128) = 'DIM';
 DECLARE @SCHEMA_ID INT = (SELECT [SCHEMA_ID] FROM [SYS].[SCHEMAS] WHERE [NAME] = @SCHEMA_NAME);
 DECLARE @CMD NVARCHAR(MAX);
 ------------------------------------------------------------------------------------------------------------------------
@@ -25,11 +25,11 @@ END ELSE BEGIN
 	END ELSE BEGIN
 		PRINT N'[✓] CURRENT DB [' + @DB_NAME_CUR + '] IS CORRECT';
 		-- SELECT
-		IF EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'PATIENTS') BEGIN
+		IF EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'RECEPTIONS') BEGIN
 			SELECT 
-				 [PA].[ID] [PATIENT_ID]
-				,[PA].[DT_CREATE] [PATIENT_DT_CREATE]
-				,[PA].[DT_CHANGE] [PATIENT_DT_CHANGE]
+				 [R].[ID] [RECEPTION_ID]
+				,[R].[DT_CREATE] [RECEPTION_DT_CREATE]
+				,[R].[DT_CHANGE] [RECEPTION_DT_CHANGE]
 				,[P].[FAMILY]
 				,[P].[NAME]
 				,[P].[SURNAME]
@@ -37,7 +37,8 @@ END ELSE BEGIN
 				,[P].[DT_BIRTH]
 				,[P].[CELLPHONE]
 				,[P].[EMAIL]
-			FROM [REF].[PATIENTS] [PA]
+			FROM [DIM].[RECEPTIONS] [R]
+			INNER JOIN [REF].[PATIENTS] [PA] ON [R].[PATIENT_ID] = [PA] .[ID]
 			INNER JOIN [REF].[PERSONS] [P] ON [PA].[PERSON_ID] = [P].[ID]
 			ORDER BY [P].[FAMILY], [P].[NAME], [P].[SURNAME];
 		END;

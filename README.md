@@ -11,4 +11,5 @@
 - Create tables by `EMPLOYEES_CREATE`, `EMPLOYEES_ALTER`
 - Create tables by `MEDICAL_CARDS`, `MEDICAL_CARDS`
 - Create tables by `PATIENTS_CREATE`, `PATIENTS_ALTER`
+- Create tables by `RECEPTIONS_CREATE`, `RECEPTIONS_ALTER`
 - Create indexes by `INDEXES_RECREATE`

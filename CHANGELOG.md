@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-## [0.1.100] - 2023-07-12
+## [0.1.110] - 2023-07-12
 ### Added
 - HmSqlScripts/DB/DB_SCHEMAS.sql
 - HmSqlScripts/DB/DB_SECURITY_DEV.sql
@@ -38,6 +38,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - HmSqlScripts/SCHEMA_REF/PERSONS/PERSONS_DROP.sql
 - HmSqlScripts/SCHEMA_REF/PERSONS/PERSONS_SELECT.sql
 - HmSqlScripts/SCHEMA_REF/PERSONS/PERSONS_CREATE.sql
+- HmSqlScripts/SCHEMA_REF/PERSONS/RECEPTIONS_ALTER.sql
+- HmSqlScripts/SCHEMA_REF/PERSONS/RECEPTIONS_CLEAR.sql
+- HmSqlScripts/SCHEMA_REF/PERSONS/RECEPTIONS_DROP.sql
+- HmSqlScripts/SCHEMA_REF/PERSONS/RECEPTIONS_SELECT.sql
+- HmSqlScripts/SCHEMA_REF/PERSONS/RECEPTIONS_CREATE.sql
 
 ## [0.1.030] - 2023-07-11
 ### Added
