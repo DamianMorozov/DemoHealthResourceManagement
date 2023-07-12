@@ -1,5 +1,5 @@
-------------------------------------------------------------------------------------------------------------------------
--- EMPLOYEES_CLEAR
+﻿------------------------------------------------------------------------------------------------------------------------
+-- DOCTORS_CREATE
 ------------------------------------------------------------------------------------------------------------------------
 SET NOCOUNT ON;
 SET ANSI_NULLS ON;
@@ -14,7 +14,7 @@ DECLARE @SCHEMA_ID INT = (SELECT [SCHEMA_ID] FROM [SYS].[SCHEMAS] WHERE [NAME] =
 DECLARE @CMD NVARCHAR(MAX);
 ------------------------------------------------------------------------------------------------------------------------
 DECLARE @IS_ACTION BIT = 1;
-DECLARE @IS_COMMIT BIT = 0;
+DECLARE @IS_COMMIT BIT = 1;
 ------------------------------------------------------------------------------------------------------------------------
 IF (@IS_ACTION = 0) BEGIN
 	PRINT N'[x] ACTION IS DISABLED';
@@ -26,10 +26,15 @@ END ELSE BEGIN
 		PRINT N'[x] CURRENT DB [' + @DB_NAME_CUR + '] IS NOT CORRECT';
 	END ELSE BEGIN
 		PRINT N'[✓] CURRENT DB [' + @DB_NAME_CUR + '] IS CORRECT';
-		-- CLEAR
-		IF EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'EMPLOYEES') BEGIN
-			DELETE FROM [REF].[EMPLOYEES];
-			PRINT N'[✓] TABLE [' + @SCHEMA_NAME + '].[EMPLOYEES] WAS CLEARED: ' + CAST(@@rowcount AS VARCHAR) + ' ROWS WAS AFFECTED';
+		-- CREATE TABLE
+		IF NOT EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'DOCTORS') BEGIN
+			CREATE TABLE [REF].[DOCTORS] (
+				[ID] [INT] IDENTITY(1,1) NOT NULL,
+				[DT_CREATE] [DATETIME] NOT NULL,
+				[DT_CHANGE] [DATETIME] NOT NULL,
+				[PERSON_ID] [INT] NOT NULL,
+			) ON [FG_REF];
+			PRINT N'[✓] CREATED TABLE [' + @SCHEMA_NAME + '].[DOCTORS]';
 		END;
 	END;
 	-- COMMIT

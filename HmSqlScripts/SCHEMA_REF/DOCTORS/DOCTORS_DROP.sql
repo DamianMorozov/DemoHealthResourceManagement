@@ -1,5 +1,5 @@
 ﻿------------------------------------------------------------------------------------------------------------------------
--- EMPLOYEES_DROP
+-- DOCTORS_DROP
 ------------------------------------------------------------------------------------------------------------------------
 SET NOCOUNT ON;
 SET ANSI_NULLS ON;
@@ -27,9 +27,9 @@ END ELSE BEGIN
 	END ELSE BEGIN
 		PRINT N'[✓] CURRENT DB [' + @DB_NAME_CUR + '] IS CORRECT';
 		-- DROP
-		IF EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'EMPLOYEES') BEGIN
-			DROP TABLE [REF].[EMPLOYEES];
-			PRINT N'[✓] TABLE [' + @SCHEMA_NAME + '].[EMPLOYEES] WAS DROPPED';
+		IF EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'DOCTORS') BEGIN
+			DROP TABLE [REF].[DOCTORS];
+			PRINT N'[✓] TABLE [' + @SCHEMA_NAME + '].[DOCTORS] WAS DROPPED';
 		END;
 	END;
 	-- COMMIT
