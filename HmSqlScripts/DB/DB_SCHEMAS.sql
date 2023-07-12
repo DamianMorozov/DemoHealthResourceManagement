@@ -13,12 +13,11 @@ DECLARE @SCHEMA_ID INT = 0;
 DECLARE @CMD NVARCHAR(MAX);
 ------------------------------------------------------------------------------------------------------------------------
 DECLARE @IS_ACTION BIT = 1;
-DECLARE @IS_COMMIT BIT = 0;
+DECLARE @IS_COMMIT BIT = 1;
 ------------------------------------------------------------------------------------------------------------------------
 IF (@IS_ACTION = 0) BEGIN
 	PRINT N'[x] ACTION IS DISABLED';
 END ELSE BEGIN
-	-- USE [HRM_DEMO_DEV] | USE [HRM_DEMO_PROD]
 	BEGIN TRAN
 	-- CHECK DB
 	SET @DB_NAME_CUR = (SELECT DB_NAME());

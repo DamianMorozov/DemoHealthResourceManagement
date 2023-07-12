@@ -1,6 +1,7 @@
 ﻿------------------------------------------------------------------------------------------------------------------------
 -- DB_RESTORE
 ------------------------------------------------------------------------------------------------------------------------
+USE [MASTER];
 SET NOCOUNT ON;
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
@@ -14,7 +15,6 @@ DECLARE @FILE_BACKUP_DEV VARCHAR(256) = 'HRM_DEMO_DEV.BAK';
 DECLARE @FILE_BACKUP_PROD VARCHAR(256) = 'HRM_DEMO_PROD.BAK';
 DECLARE @FILE_EXIST INT;
 DECLARE @CMD NVARCHAR(MAX);
-USE [MASTER];
 ------------------------------------------------------------------------------------------------------------------------
 DECLARE @IS_ACTION_DEV BIT = 1;
 DECLARE @IS_ACTION_PROD BIT = 0;
