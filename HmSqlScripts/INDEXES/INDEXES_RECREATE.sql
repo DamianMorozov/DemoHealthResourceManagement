@@ -150,6 +150,42 @@ END ELSE BEGIN
 		EXEC (@CMD);
 		PRINT N'[✓] INDEX CREATED [' + @INDEX + N']';
 		---------------------------------------------------------------------------------------------------------------------
+		-- EMPLOYEES
+		PRINT N'[✓] TABLE [EMPLOYEES]';
+		-- [EMPLOYEES] & [DT_CREATE]
+		SET @INDEX = (SELECT [INDEX] FROM @INDEXES WHERE [SCHEMA] = @SCHEMA_REF_NAME AND [INDEX] = 'IX_EMPLOYEES_DT_CREATE');
+		IF (@INDEX IS NOT NULL) BEGIN
+			SET @CMD = 'DROP INDEX IF EXISTS [' + @INDEX + '] ON [REF].[EMPLOYEES]';
+			EXEC (@CMD);
+			PRINT N'[✓] INDEX DROPPED [' + @INDEX + N']';
+		END;
+		SET @INDEX = 'IX_EMPLOYEES_DT_CREATE';
+		SET @CMD = 'CREATE INDEX [' + @INDEX + '] ON [REF].[EMPLOYEES] ([DT_CREATE])';
+		EXEC (@CMD);
+		PRINT N'[✓] INDEX CREATED [' + @INDEX + N']';
+		-- [EMPLOYEES] & [DT_CHANGE]
+		SET @INDEX = (SELECT [INDEX] FROM @INDEXES WHERE [SCHEMA] = @SCHEMA_REF_NAME AND [INDEX] = 'IX_EMPLOYEES_DT_CHANGE');
+		IF (@INDEX IS NOT NULL) BEGIN
+			SET @CMD = 'DROP INDEX IF EXISTS [' + @INDEX + '] ON [REF].[EMPLOYEES]';
+			EXEC (@CMD);
+			PRINT N'[✓] INDEX DROPPED [' + @INDEX + N']';
+		END;
+		SET @INDEX = 'IX_EMPLOYEES_DT_CHANGE';
+		SET @CMD = 'CREATE INDEX [' + @INDEX + '] ON [REF].[EMPLOYEES] ([DT_CHANGE])';
+		EXEC (@CMD);
+		PRINT N'[✓] INDEX CREATED [' + @INDEX + N']';
+		-- [EMPLOYEES] & [PERSON_ID]
+		SET @INDEX = (SELECT [INDEX] FROM @INDEXES WHERE [SCHEMA] = @SCHEMA_REF_NAME AND [INDEX] = 'AK_EMPLOYEES_PERSON_ID');
+		IF (@INDEX IS NOT NULL) BEGIN
+			SET @CMD = 'DROP INDEX IF EXISTS [' + @INDEX + '] ON [REF].[EMPLOYEES]';
+			EXEC (@CMD);
+			PRINT N'[✓] INDEX DROPPED [' + @INDEX + N']';
+		END;
+		SET @INDEX = 'AK_EMPLOYEES_PERSON_ID';
+		SET @CMD = 'CREATE UNIQUE INDEX [' + @INDEX + '] ON [REF].[EMPLOYEES] ([PERSON_ID])';
+		EXEC (@CMD);
+		PRINT N'[✓] INDEX CREATED [' + @INDEX + N']';
+		---------------------------------------------------------------------------------------------------------------------
 	END;
 	-- COMMIT
 	IF (@IS_COMMIT = 1) BEGIN

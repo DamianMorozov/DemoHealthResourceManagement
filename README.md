@@ -8,4 +8,5 @@
 - Setup security by `DB_SECURITY_DEV` or `DB_SECURITY_PROD`
 - Setup schemas by `DB_SCHEMAS`
 - Create tables by `PERSONS_CREATE`, `PERSONS_ALTER`
+- Create tables by `EMPLOYEES_CREATE`, `EMPLOYEES_ALTER`
 - Create indexes by `INDEXES_RECREATE`
