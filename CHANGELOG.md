@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-## [0.1.060] - 2023-07-12
+## [0.1.070] - 2023-07-12
 ### Added
 - HmSqlScripts/DB/DB_SCHEMAS.sql
 - HmSqlScripts/DB/DB_SECURITY_DEV.sql
@@ -25,6 +25,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - HmSqlScripts/SCHEMA_REF/EMPLOYEES/EMPLOYEES_DROP.sql
 - HmSqlScripts/SCHEMA_REF/EMPLOYEES/EMPLOYEES_SELECT.sql
 - HmSqlScripts/SCHEMA_REF/EMPLOYEES/EMPLOYEES_CREATE.sql
+- HmSqlScripts/SCHEMA_REF/CLIENTS/CLIENTS_ALTER.sql
+- HmSqlScripts/SCHEMA_REF/CLIENTS/CLIENTS_CLEAR.sql
+- HmSqlScripts/SCHEMA_REF/CLIENTS/CLIENTS_DROP.sql
+- HmSqlScripts/SCHEMA_REF/CLIENTS/CLIENTS_SELECT.sql
+- HmSqlScripts/SCHEMA_REF/CLIENTS/CLIENTS_CREATE.sql
 - HmSqlScripts/INDEXES/INDEXES_REBUILD.sql
 - HmSqlScripts/INDEXES/INDEXES_RECREATE.sql
 - HmSqlScripts/INDEXES/INDEXES_SELECT.sql
