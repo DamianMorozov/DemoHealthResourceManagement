@@ -186,6 +186,31 @@ END ELSE BEGIN
 		EXEC (@CMD);
 		PRINT N'[✓] INDEX CREATED [' + @INDEX + N']';
 		---------------------------------------------------------------------------------------------------------------------
+		-- MEDICAL_CARDS
+		PRINT N'[✓] TABLE [MEDICAL_CARDS]';
+		-- [MEDICAL_CARDS] & [DT_CREATE]
+		SET @INDEX = (SELECT [INDEX] FROM @INDEXES WHERE [SCHEMA] = @SCHEMA_REF_NAME AND [INDEX] = 'IX_MEDICAL_CARDS_DT_CREATE');
+		IF (@INDEX IS NOT NULL) BEGIN
+			SET @CMD = 'DROP INDEX IF EXISTS [' + @INDEX + '] ON [REF].[MEDICAL_CARDS]';
+			EXEC (@CMD);
+			PRINT N'[✓] INDEX DROPPED [' + @INDEX + N']';
+		END;
+		SET @INDEX = 'IX_MEDICAL_CARDS_DT_CREATE';
+		SET @CMD = 'CREATE INDEX [' + @INDEX + '] ON [REF].[MEDICAL_CARDS] ([DT_CREATE])';
+		EXEC (@CMD);
+		PRINT N'[✓] INDEX CREATED [' + @INDEX + N']';
+		-- [MEDICAL_CARDS] & [DT_CHANGE]
+		SET @INDEX = (SELECT [INDEX] FROM @INDEXES WHERE [SCHEMA] = @SCHEMA_REF_NAME AND [INDEX] = 'IX_MEDICAL_CARDS_DT_CHANGE');
+		IF (@INDEX IS NOT NULL) BEGIN
+			SET @CMD = 'DROP INDEX IF EXISTS [' + @INDEX + '] ON [REF].[MEDICAL_CARDS]';
+			EXEC (@CMD);
+			PRINT N'[✓] INDEX DROPPED [' + @INDEX + N']';
+		END;
+		SET @INDEX = 'IX_MEDICAL_CARDS_DT_CHANGE';
+		SET @CMD = 'CREATE INDEX [' + @INDEX + '] ON [REF].[MEDICAL_CARDS] ([DT_CHANGE])';
+		EXEC (@CMD);
+		PRINT N'[✓] INDEX CREATED [' + @INDEX + N']';
+		---------------------------------------------------------------------------------------------------------------------
 		-- CLIENTS
 		PRINT N'[✓] TABLE [CLIENTS]';
 		-- [CLIENTS] & [DT_CREATE]

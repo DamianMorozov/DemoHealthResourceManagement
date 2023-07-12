@@ -9,5 +9,6 @@
 - Setup schemas by `DB_SCHEMAS`
 - Create tables by `PERSONS_CREATE`, `PERSONS_ALTER`
 - Create tables by `EMPLOYEES_CREATE`, `EMPLOYEES_ALTER`
+- Create tables by `MEDICAL_CARDS`, `MEDICAL_CARDS`
 - Create tables by `CLIENTS_CREATE`, `CLIENTS_ALTER`
 - Create indexes by `INDEXES_RECREATE`
