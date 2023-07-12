@@ -3,6 +3,9 @@
 ## <div align="center"><b><a href="README.md">Readme</a> | <a href="CHANGELOG.md">Changelog</a> | <a href="LICENSE.md">License</a></b></div>
 
 ## Quick start
-- Open `HmSqlScripts` on SSMS.
-- Create new DB by `DB_CREATE.sql`
-- Setup security by `DB_SECURITY.sql`
+- Open `HmSqlScripts` at SSMS
+- Create new DB by `DB_CREATE`
+- Setup security by `DB_SECURITY_DEV` or `DB_SECURITY_PROD`
+- Setup schemas by `DB_SCHEMAS`
+- Create tables by `PERSONS_CREATE`, `PERSONS_ALTER`
+- Create indexes by `INDEXES_RECREATE`
