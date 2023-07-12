@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------------------------
--- CLIENTS_CLEAR
+-- PATIENTS_CLEAR
 ------------------------------------------------------------------------------------------------------------------------
 SET NOCOUNT ON;
 SET ANSI_NULLS ON;
@@ -27,9 +27,9 @@ END ELSE BEGIN
 	END ELSE BEGIN
 		PRINT N'[✓] CURRENT DB [' + @DB_NAME_CUR + '] IS CORRECT';
 		-- CLEAR
-		IF EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'CLIENTS') BEGIN
-			DELETE FROM [REF].[CLIENTS];
-			PRINT N'[✓] TABLE [' + @SCHEMA_NAME + '].[CLIENTS] WAS CLEARED: ' + CAST(@@rowcount AS VARCHAR) + ' ROWS WAS AFFECTED';
+		IF EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'PATIENTS') BEGIN
+			DELETE FROM [REF].[PATIENTS];
+			PRINT N'[✓] TABLE [' + @SCHEMA_NAME + '].[PATIENTS] WAS CLEARED: ' + CAST(@@rowcount AS VARCHAR) + ' ROWS WAS AFFECTED';
 		END;
 	END;
 	-- COMMIT

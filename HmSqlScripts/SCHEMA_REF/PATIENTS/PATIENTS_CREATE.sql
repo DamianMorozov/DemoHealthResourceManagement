@@ -1,5 +1,5 @@
 ﻿------------------------------------------------------------------------------------------------------------------------
--- CLIENTS_CREATE
+-- PATIENTS_CREATE
 ------------------------------------------------------------------------------------------------------------------------
 SET NOCOUNT ON;
 SET ANSI_NULLS ON;
@@ -27,14 +27,15 @@ END ELSE BEGIN
 	END ELSE BEGIN
 		PRINT N'[✓] CURRENT DB [' + @DB_NAME_CUR + '] IS CORRECT';
 		-- CREATE TABLE
-		IF NOT EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'CLIENTS') BEGIN
-			CREATE TABLE [REF].[CLIENTS] (
+		IF NOT EXISTS (SELECT 1 FROM [SYS].[TABLES] WHERE [SCHEMA_ID] = @SCHEMA_ID AND [name] = N'PATIENTS') BEGIN
+			CREATE TABLE [REF].[PATIENTS] (
 				[ID] [INT] IDENTITY(1,1) NOT NULL,
 				[DT_CREATE] [DATETIME] NOT NULL,
 				[DT_CHANGE] [DATETIME] NOT NULL,
 				[PERSON_ID] [INT] NOT NULL,
+				[MEDICAL_CARD_ID] [INT] NOT NULL,
 			) ON [FG_REF];
-			PRINT N'[✓] CREATED TABLE [' + @SCHEMA_NAME + '].[CLIENTS]';
+			PRINT N'[✓] CREATED TABLE [' + @SCHEMA_NAME + '].[PATIENTS]';
 		END;
 	END;
 	-- COMMIT
