@@ -79,6 +79,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RECEPTIONS", "RECEPTIONS", 
 		SCHEMA_DIM\RECEPTIONS\RECEPTIONS_SELECT.sql = SCHEMA_DIM\RECEPTIONS\RECEPTIONS_SELECT.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DATA", "DATA", "{CCB49EF6-570E-4D02-8143-C06F8C820B4A}"
+	ProjectSection(SolutionItems) = preProject
+		DATA\DATA_CLEAR.sql = DATA\DATA_CLEAR.sql
+		DATA\TEST_DATA_INSERT.sql = DATA\TEST_DATA_INSERT.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
