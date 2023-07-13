@@ -37,6 +37,7 @@ END ELSE BEGIN
 	LEFT OUTER JOIN [SYS].[SCHEMAS] [S] ON [T].[SCHEMA_ID] = [S].[SCHEMA_ID]
 	INNER JOIN [SYS].[DATABASE_FILES] [F] ON [A].[DATA_SPACE_ID] = [F].[DATA_SPACE_ID]
 	WHERE [T].[IS_MS_SHIPPED] = 0 AND [I].[OBJECT_ID] > 255
-	GROUP BY [T].[NAME], [S].[NAME], [P].[ROWS], [F].[NAME];
+	GROUP BY [T].[NAME], [S].[NAME], [P].[ROWS], [F].[NAME]
+	ORDER BY [S].[NAME], [T].[NAME];
 END;
 ------------------------------------------------------------------------------------------------------------------------
