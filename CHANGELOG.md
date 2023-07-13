@@ -9,11 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-## [0.1.140] - 2023-07-12
+## [0.1.180] - 2023-07-13
 ### Added
 - HmSqlScripts/DB/DB_SCHEMAS.sql
-- HmSqlScripts/DB/DB_SECURITY_DEV.sql
-- HmSqlScripts/DB/DB_SECURITY_PROD.sql
+- HmSqlScripts/DB/DB_SECURITY.sql
 - HmSqlScripts/DB/DB_TABLES_SIZES.sql
 - HmSqlScripts/INDEXES/INDEXES_REBUILD.sql
 - HmSqlScripts/INDEXES/INDEXES_RECREATE.sql
@@ -45,6 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - HmSqlScripts/SCHEMA_DIM/RECEPTIONS/RECEPTIONS_CREATE.sql
 - HmSqlScripts/DATA/DATA_CLEAR.sql
 - HmSqlScripts/DATA/TEST_DATA_INSERT.sql
+- HmSqlScripts/TASKS/TASK_1_RECEPTIONS_2015.sql
+- HmSqlScripts/TASKS/TASK_2_LAST_DOCTORS.sql
 
 ## [0.1.030] - 2023-07-11
 ### Added
